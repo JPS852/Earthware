@@ -54,13 +54,14 @@ namespace ConsoleApp1
 
                     if(!SaleRows[i].Good.Category.TaxExempt)
                     {
-                        NewReceiptRow.RowTax = NewReceiptRow.RowTotal * 0.1m;
+                        decimal RoundedVal = Math.Ceiling((NewReceiptRow.RowTotal * 0.1m) * 20m);
+                        NewReceiptRow.RowTax += RoundedVal / 20m;
                     }
 
                     if(SaleRows[i].Good.Imported == true)
                     {
-                        decimal RoundedVal = Math.Round(NewReceiptRow.RowTotal * 0.05m, 1);
-                        NewReceiptRow.RowTax += (RoundedVal * 20) / 20;
+                        decimal RoundedVal = Math.Ceiling((NewReceiptRow.RowTotal * 0.05m) * 20m);
+                        NewReceiptRow.RowTax += RoundedVal / 20m;
                     }
 
                     Total += NewReceiptRow.RowTotal;
