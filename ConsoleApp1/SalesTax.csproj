@@ -42,11 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\GenerateTestData.cs" />
+    <Compile Include="Helpers\GenerateTestRows.cs" />
+    <Compile Include="Models\Good.cs" />
+    <Compile Include="Models\GoodCategory.cs" />
+    <Compile Include="Models\Receipt.cs" />
+    <Compile Include="Models\SaleRow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\ReceiptRow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
